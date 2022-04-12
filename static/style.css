@@ -1,0 +1,13 @@
+#base_title{
+    border:1px solid black;
+    text-align: center;
+}
+
+#login_section{
+    padding: 20px;
+    border:1px solid black;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+

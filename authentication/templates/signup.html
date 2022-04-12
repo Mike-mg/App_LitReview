@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <section id="section_signup">
+
+        <h2>Sign-up</h2>
+        
+        {% if form.errors %}
+            {{ form.errors }}
+        {% endif %}
+
+        <form method="post">
+
+            {% csrf_token %}    
+            {{ form.as_p }}
+        
+            <button type="submit" >Sign-up now</button>
+        
+        </form>
+
+    </section>  
+
+{% endblock content %}

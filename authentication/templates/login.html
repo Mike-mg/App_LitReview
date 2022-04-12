@@ -2,14 +2,33 @@
 
 {% block content %}
 
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
+<section id="section_login">
 
-        <button type="submit">Connect</button>
+    <aside id="signup">
 
-        <p>{{ message }}</p>
+        <form method="post">
+            {% csrf_token %}
 
-    </form>
+            <h2>Sign-up now</h2> 
+            <button formaction="{% url 'signup' %}">Sign-up</button>
+        </form>
+
+    </aside>
+
+    <aside id="login"> 
+        <h2>Sign-in</h2>
+        <form method="post">
+
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit">Sign-in</button>
+
+            <p>{{ message }}</p>
+
+        </form>
+    </aside>
+
+</section>
 
 {% endblock content %}
