@@ -43,5 +43,4 @@ def signup_page(request):
             login(request, user)
             redirect('home')
 
-
     return render(request, 'signup.html', context={'form': form})
