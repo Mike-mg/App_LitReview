@@ -6,18 +6,23 @@
 
         <h2>Sign-up</h2>
         
-        {% if form.errors %}
-            {{ form.errors }}
-        {% endif %}
+        <aside>
+            
+            <form method="post">
 
-        <form method="post">
+                {% if form.errors %}
+                    {{ form.errors }}
+                {% endif %}
 
-            {% csrf_token %}    
-            {{ form.as_p }}
-        
-            <button type="submit" >Sign-up now</button>
-        
-        </form>
+                {% csrf_token %}    
+                {{ form.as_p }}
+            
+                <div id="div_button">
+                    <button type="submit" >Sign-up now</button>
+                    <button><a href="{% url 'login' %}">Login page</a></button>
+                </div>
+            </form>
+        </aside>
 
     </section>  
 

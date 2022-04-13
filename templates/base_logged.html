@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static 'authentication.css' %}" />
+    <link rel="stylesheet" href="{% static 'flux.css' %}" />
+    <title>App_LitReview</title>
+</head>
+<body>
+    <section>
+
+    </section>
+
+    <ul id="menu_logged">
+        <li id="menu_logged_tilte">App_LitReview</li>
+        <li><a href="{% url 'feeds' %}">Feeds</a></li>
+        <li><a href="{% url 'posts' %}">Posts</a></li>
+        <li><a href="{% url 'subscriptions' %}">Subscriptions</a></li>
+        {% if user.is_authenticated %}
+        <li id="connected"><a href="{% url 'logout' %}">Logout</a>&emsp;(connected)</li>
+        {% endif %}
+    </ul>
+
+    {% block content %}{% endblock content %}
+
+</body>
+</html>

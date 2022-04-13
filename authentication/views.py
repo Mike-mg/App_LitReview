@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from authentication.forms import LoginForm, SignUpForm
 
 
-def login_user(request):
+def login_page(request):
 
     form = LoginForm()
     message = ''

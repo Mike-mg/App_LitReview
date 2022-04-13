@@ -15,13 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth.views import LoginView
 from authentication import views as views_auth
 from flux import views as views_flux
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views_auth.login_user, name='login'),
+
+    path('', views_auth.login_page, name='login'),
+
+    path('signup/', LoginView.as_view(
+        template_name='signup.html',
+        redirect_authenticated_user=True),
+         name='signup'),
+
     path('logout/', views_auth.logout_user, name='logout'),
     path('home/', views_flux.home, name='home'),
-    path('signup/', views_auth.signup_page, name='signup'),
+    path('feeds/', views_flux.feeds, name='feeds'),
+    path('posts/',  views_flux.posts, name='posts'),
+    path('subscriptions/',  views_flux.subscriptions, name='subscriptions'),
 ]

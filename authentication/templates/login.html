@@ -4,31 +4,34 @@
 
 <section id="section_login">
 
-    <aside id="signup">
+    <div id="div_section_login">
+        <aside id="signup">
 
-        <form method="post">
+            <form method="post">
             {% csrf_token %}
 
             <h2>Sign-up now</h2> 
             <button formaction="{% url 'signup' %}">Sign-up</button>
-        </form>
+            </form>
 
-    </aside>
+            </aside>
 
-    <aside id="login"> 
-        <h2>Sign-in</h2>
-        <form method="post">
+            <aside id="login"> 
+            <h2>Sign-in</h2>
+            <form method="post">
 
             {% csrf_token %}
             {{ form.as_p }}
 
-            <button type="submit">Sign-in</button>
-
             <p>{{ message }}</p>
 
-        </form>
-    </aside>
+            <button type="submit">Sign-in</button>
 
+            
+
+            </form>
+        </aside>
+    </div>
 </section>
 
 {% endblock content %}

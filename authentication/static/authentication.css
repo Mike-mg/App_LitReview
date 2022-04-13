@@ -1,16 +1,45 @@
 #section_login{
-    padding:20px;
-    border:1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+#div_section_login{
+    width:750px;
+    padding:25px;
     display: flex;
     justify-content: space-between;
     text-align: center;
+
 }
 
 #login{
     text-align: center;
 }
 
-#signup{
-    width:250px;
-    height:150px;
+#section_signup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
+#section_signup h2{
+    text-align: center;
+}
+
+#section_signup a{
+    color: black;
+    text-decoration: none;
+}
+
+#div_button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_button button{
+    margin-bottom: 15px;
+}
+

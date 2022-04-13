@@ -132,6 +132,9 @@ AUTH_USER_MODEL = 'authentication.User'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
     BASE_DIR / 'authentication/static',
+    BASE_DIR / 'flux/static',
     ]
 
 LOGIN_URL = 'login'
+
+LOGIN_REDIRECT_URL = 'home'
